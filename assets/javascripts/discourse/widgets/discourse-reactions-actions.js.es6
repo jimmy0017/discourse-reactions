@@ -165,6 +165,8 @@ export default createWidget("discourse-reactions-actions", {
       root && root.classList.add("discourse-reactions-no-select");
 
       this._touchStartAt = Date.now();
+      this.toggleReactions();
+      
       this._touchTimeout = later(() => {
         this._touchStartAt = null;
         this.toggleReactions();
