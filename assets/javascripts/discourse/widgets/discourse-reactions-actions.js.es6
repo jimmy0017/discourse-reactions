@@ -202,9 +202,9 @@ export default createWidget("discourse-reactions-actions", {
         }
       }
 
-      const duration = Date.now() - (this._touchStartAt || 0);
+      const duration = Date.now() - (this._touchStartAt || 0) + 10; 
       this._touchStartAt = null;
-      if (duration > 400) {
+      if (duration > 1) {
         if (
           event.originalEvent &&
           event.originalEvent.target &&
